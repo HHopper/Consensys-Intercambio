@@ -29,7 +29,7 @@ I hope you enjoy playing around with it as much as I did making it.
 
 # How to Initialize
 
-Assuming you are using a Linux Ubuntu set-up, you will need the truffle suite as well as the Ganache-cli development blockchain. Following the traditional command line, type: 
+Assuming you are using the provided VM(which can be downloaded at: https://drive.google.com/open?id=12vd29ZzLWqbqUBSAvStRPwodcxGxe8r8), then follow these steps: 
 
 1. Open up a terminal and run
 	$ ganache-cli
