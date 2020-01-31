@@ -18,7 +18,7 @@ In this way, this project is intended simply to facilitate the exact same proces
 # How It Works (aka our good ol' user story)
 As a decentralized application, Intercambio simply handles the business logic between buyers and sellers. 
 
-There are only two types of users of this application - both of which have equally important parts to play. Students can create and fund accounts with their public keys. Tutors can do the same. Each of these, including their balances, are included in a public ledger for At this point the lesson has been confirmed and the funds are transferred. Voila!searching later on. A student will select a tutor based upon the language they are interested in learning from the tutor's available time-slots. At this point, to provide an incentive for both the student and tutor to attend their lesson, both parties will stake a predetermined amount of ether in escro until the tutoring lesson occurs. As it stands, the tutor will stake 25% of their rate to and the student will stake the hourly rate for the tutor. Upon scheduling and the inclusion of this transaction on the chain, the student and tutor will have thirty days to complete the lesson. The lesson and stake logic, at this point, only will handle the confirmation of the lesson from a financial perspective and does not integrate (yet) the actual management of the video conversation between the users. Now assuming all goes to plan - that is, the tutor and student skype for an hour to exchange languages - both users will confirm. With a confirmation set, the tutor will call the transfer function and the funds will be withdrawn from escro and deposited into the tutor's account. 
+There are only two types of users of this application - both of which have equally important parts to play. Students can create and fund accounts with their public keys. Tutors can do the same. Each of these, including their balances, are included in a public ledger for At this point the lesson has been confirmed and the funds are transferred. Voila! A student will select a tutor based upon the language they are interested in learning from the tutor's available time-slots. At this point, to provide an incentive for both the student and tutor to attend their lesson, both parties will stake a predetermined amount of ether in escro until the tutoring lesson occurs. As it stands, the tutor will stake 25% of their rate to and the student will stake the hourly rate for the tutor. Upon scheduling and the inclusion of this transaction on the chain, the student and tutor will have thirty days to complete the lesson. The lesson and stake logic, at this point, only will handle the confirmation of the lesson from a financial perspective and does not integrate (yet) the actual management of the video conversation between the users. Now assuming all goes to plan - that is, the tutor and student skype for an hour to exchange languages - both users will confirm. With a confirmation set, the tutor will call the transfer function and the funds will be withdrawn from escro and deposited into the tutor's account. 
 
 # What This Minimum Viable Product Aims to Achieve
 
@@ -31,39 +31,24 @@ I hope you enjoy playing around with it as much as I did making it.
 
 Assuming you are using a Linux Ubuntu set-up, you will need the truffle suite as well as the Ganache-cli development blockchain. Following the traditional command line, type: 
 
-    $ npm install -g truffle
-    $ npm install -g ganache-cli
-    $ npm install
-
-Also, make sure you have metamsk installed on your local machine that you're definitely not using the Brave Browser. Both Firefox and Chrome work fine for the take of this very modest first go at a Dapp. 
-
-# How to Comb Through This Project Effeciently
-
-When you download this file and open it up in the Visual Studio (which is what I'm assuming you're using as your coding environment). I've tried to document the application logic as thoroughly as possible so you don't have to go digging around guessing what everything does. In the top directory you will find a folder called Assignment Extras. Within this you will find my ***avoiding_common_attacks, design_pattern_decisions, and a brief library demonstration as well.*** My project didn't need a library so I added a brief demo. 
-
-Beneath that are all of the standard things you would expect from a truffle project. 
-
-Upon opening this project please do the following steps: 
-
-**Step 1:** Run the ganache-cli blockchain. The port is 8545. 
-
-**Step 2:** 
-      truffle compile
-
-**Step 2:** 
-      truffle migrate
-
-**Step 4:**  
-      truffle test
-You will note that there are ten total tests thus far. I decided it was better to test the key functionality in this way because the instantiated contract contains rather complex business logic within. 
-
-**Step 5:** initialize the front end with the following command
-
-< Insert Command Here >
-
-By the time you will get to step 5 you will notice that the front-end of this application is far from complete. It does, however, display the current ethereum account and the development server will run locally (with hyper-limited functionality). 
-
-While this is a first iteration of this project please note there is a second deployed in which you can interact with on the Rinkby development network. You can find that here: 
+1. Open up a terminal and run
+	$ ganache-cli
+2. Open up another terminal window with ctrl+shift+n and run
+	$ cd ~/dev/inter/
+	$ truffle compile
+	$ truffle migrate
+	$ truffle test
+	$ npm run dev
+3. After firefox and metamask launch, go to the ganache-cli terminal
+	a. copy the mnemonic to your clipboard
+		(this is most easily done by highlighting and ctrl+shift+c)
+4. Go back to firefox and paste the mnemonic into metamask
+	a. First click import seed phrase
+	b. Then paste using ctrl+v
+	c. give it a made up password - 12345678 works fine
+5. Then click on metamask and change the network to localhost8545
+6. Finally click on the My Account tab to see the current accounts address from metamask.
+7. this is the only functionality that currently works. I just so happen to suck as a javascript developer. So... if you want to fully interact with this contr switch to the rinkby network and find it at the following: 
 
 https://oneclickdapp.com/sponsor-baron/
 
